@@ -20,3 +20,54 @@ import InputURL from './components/input_especializados/InputURL';
 import InputSearch from './components/input_especializados/InputSearch';
 
 import { useState } from 'react';
+
+
+
+function App() {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    contraseña: '',
+    telefono: '',
+    url: '',
+    busqueda: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Formulario enviado con éxito:\n" + JSON.stringify(formData, null, 2));
+  };
+
+  return (
+    <div className="container mt-4">
+      <Titulo texto="Mi Proyecto React - A8 PICW" nivel={1} />
+      <Parrafo texto="Este proyecto incluye componentes funcionales reutilizables y validados con Bootstrap 5." />
+
+      <Imagen
+        src="https://via.placeholder.com/200"
+        alt="Ejemplo"
+        width="200"
+        height="200"
+      />
+
+      <Enlace href="https://react.dev" texto="Visita React.dev" />
+
+      <Titulo texto="Lista de tecnologías" nivel={2} />
+      <Lista elementos={['HTML', 'CSS', 'JavaScript', 'React']} />
+
+      <Titulo texto="Tabla de Usuarios" nivel={2} />
+      <Tabla
+        cabecera={['Nombre', 'Edad']}
+        datos={[
+          ['Carlos', 28],
+          ['María', 32],
+        ]}
+      />
