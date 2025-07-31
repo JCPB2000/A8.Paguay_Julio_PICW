@@ -68,6 +68,8 @@ function App() {
 
       {/* Título principal */}
       <Titulo texto="Mi Proyecto React" nivel={1} className="titulo-principal" />
+      <Titulo texto="Nombre: Julio Paguay" nivel={2} />
+
       <Parrafo texto="Este proyecto muestra componentes personalizados en React que representan elementos HTML básicos. Se crearon componentes funcionales reutilizables mediante props, como imágenes, títulos, párrafos, enlaces, listas, tablas y formularios con inputs especializados. Todo fue organizado en archivos individuales dentro de la carpeta src/components y se aplicaron estilos utilizando Bootstrap y CSS. Esta implementación permitió comprender la estructura modular de React y su aplicación práctica en la creación de interfaces dinámicas.." />
       <Enlace
         href="https://www.espe.edu.ec/"
