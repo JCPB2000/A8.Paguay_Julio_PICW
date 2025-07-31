@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'; 
+import './App.css';
 
 import Titulo from './components/elementos_basicos/Titulo';
 import Parrafo from './components/elementos_basicos/Parrafo';
@@ -26,6 +26,8 @@ function App() {
     clave: ''
   });
 
+  const [mensaje, setMensaje] = useState('');
+
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
@@ -35,12 +37,27 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Nombre: ${formData.nombre}\nCorreo: ${formData.correo}`);
+
+    // Validación simple
+    if (!formData.nombre || !formData.correo || !formData.clave) {
+      alert('Por favor, completa todos los campos.');
+      return;
+    }
+
+    // Confirmación de envío
+    setMensaje(`Datos enviados correctamente. ¡Gracias, ${formData.nombre}!`);
+
+    // Limpieza del formulario
+    setFormData({
+      nombre: '',
+      correo: '',
+      clave: ''
+    });
   };
 
   return (
     <div className="container fondo-contenedor mt-4 text-center">
-      {/* Logo ESPE con estilo */}
+      {/* Logo ESPE */}
       <Imagen
         src="https://www.espe.edu.ec/wp-content/uploads/2018/10/LOGO-ESPE_500.png"
         alt="Logo ESPE"
@@ -49,7 +66,7 @@ function App() {
         className="logo-espe"
       />
 
-      {/* Título principal con estilo */}
+      {/* Título principal */}
       <Titulo texto="Mi Proyecto React" nivel={1} className="titulo-principal" />
       <Parrafo texto="Este proyecto muestra componentes personalizados en React." />
       <Enlace
@@ -94,6 +111,9 @@ function App() {
         />
         <Boton texto="Enviar" />
       </Formulario>
+
+      {/* Mensaje de confirmación */}
+      {mensaje && <p className="alert alert-success mt-3">{mensaje}</p>}
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 
-function Boton({ texto, onClick }) {
+// Botón que envía el formulario
+function Boton({ texto }) {
   return (
-    <button type="button" className="btn btn-primary" onClick={onClick}>
+    <button type="submit" className="btn btn-primary">
       {texto}
     </button>
   );

@@ -1,4 +1,7 @@
+// Importación de React y useState para manejar el estado del formulario
 import React, { useState } from 'react';
+
+// Importación de componentes personalizados
 import Formulario from './Formulario';
 import Boton from './Boton';
 import InputText from '../input_especializados/InputText';
@@ -8,7 +11,9 @@ import InputTel from '../input_especializados/InputTel';
 import InputURL from '../input_especializados/InputURL';
 import InputSearch from '../input_especializados/InputSearch';
 
+// Componente principal del formulario completo
 function FormularioCompleto() {
+  // Estado local para guardar los datos del formulario
   const [formData, setFormData] = useState({
     nombre: '',
     correo: '',
@@ -18,6 +23,7 @@ function FormularioCompleto() {
     busqueda: ''
   });
 
+  // Maneja los cambios en los campos del formulario
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
@@ -25,11 +31,13 @@ function FormularioCompleto() {
     }));
   };
 
+  // Maneja el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Formulario enviado correctamente ✅");
+    alert("Formulario enviado correctamente");
   };
 
+  // Renderizado del formulario con todos los campos
   return (
     <div className="card p-4">
       <h3>Formulario Completo</h3>

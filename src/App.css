@@ -3,20 +3,20 @@
   text-align: center;
 }
 
-/* Tamaño del logo (por defecto) */
+/* Tamaño del logo */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-/* Animación del logo (por defecto) */
+/* Animación del logo  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-/* Encabezado general (por defecto) */
+/* Encabezado general */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
