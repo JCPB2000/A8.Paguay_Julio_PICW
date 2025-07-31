@@ -63,7 +63,7 @@ function App() {
           ['Marco', 'marco@espe.com']
         ]}
       />
-
+  
       <hr />
       <Titulo texto="Formulario de contacto" nivel={2} />
       <Formulario onSubmit={handleSubmit}>
