@@ -1,5 +1,8 @@
-import Input from "./Input";
+import React from 'react';
+import Input from './Input';
 
-const InputSearch = (props) => <Input type="search" {...props} />;
+function InputSearch(props) {
+  return <Input type="search" {...props} />;
+}
 
 export default InputSearch;

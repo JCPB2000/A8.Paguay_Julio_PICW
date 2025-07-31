@@ -1,4 +1,4 @@
-import './App.css';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Titulo from './components/elementos_basicos/Titulo';
@@ -13,61 +13,74 @@ import Formulario from './components/formularios/Formulario';
 import Boton from './components/formularios/Boton';
 
 import InputText from './components/input_especializados/InputText';
-import InputPassword from './components/input_especializados/InputPassword';
 import InputEmail from './components/input_especializados/InputEmail';
-import InputTel from './components/input_especializados/InputTel';
-import InputURL from './components/input_especializados/InputURL';
-import InputSearch from './components/input_especializados/InputSearch';
-
-import { useState } from 'react';
-
-
+import InputPassword from './components/input_especializados/InputPassword';
 
 function App() {
   const [formData, setFormData] = useState({
     nombre: '',
-    email: '',
-    contraseña: '',
-    telefono: '',
-    url: '',
-    busqueda: ''
+    correo: '',
+    clave: ''
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Formulario enviado con éxito:\n" + JSON.stringify(formData, null, 2));
+    alert(`Nombre: ${formData.nombre}\nCorreo: ${formData.correo}`);
   };
 
   return (
     <div className="container mt-4">
-      <Titulo texto="Mi Proyecto React - A8 PICW" nivel={1} />
-      <Parrafo texto="Este proyecto incluye componentes funcionales reutilizables y validados con Bootstrap 5." />
+      <Titulo texto="Mi Proyecto React" nivel={1} />
+      <Parrafo texto="Este proyecto muestra componentes personalizados en React." />
+      <Imagen src="https://via.placeholder.com/200" alt="Ejemplo" width="200" height="200" />
+      <Enlace href="https://react.dev" texto="Documentación oficial de React" />
 
-      <Imagen
-        src="https://via.placeholder.com/200"
-        alt="Ejemplo"
-        width="200"
-        height="200"
-      />
+      <hr />
+      <Titulo texto="Lista de tareas" nivel={2} />
+      <Lista elementos={['Aprender React', 'Crear componentes', 'Divertirse programando']} />
 
-      <Enlace href="https://react.dev" texto="Visita React.dev" />
-
-      <Titulo texto="Lista de tecnologías" nivel={2} />
-      <Lista elementos={['HTML', 'CSS', 'JavaScript', 'React']} />
-
-      <Titulo texto="Tabla de Usuarios" nivel={2} />
+      <hr />
+      <Titulo texto="Tabla de usuarios" nivel={2} />
       <Tabla
-        cabecera={['Nombre', 'Edad']}
+        cabecera={['Nombre', 'Correo']}
         datos={[
-          ['Carlos', 28],
-          ['María', 32],
+          ['Julio', 'juliocesar@espe.com'],
+          ['Luis', ' @example.com']
         ]}
       />
+
+      <hr />
+      <Titulo texto="Formulario de contacto" nivel={2} />
+      <Formulario onSubmit={handleSubmit}>
+        <InputText
+          name="nombre"
+          placeholder="Tu nombre"
+          value={formData.nombre}
+          onChange={handleChange}
+        />
+        <InputEmail
+          name="correo"
+          placeholder="Tu correo"
+          value={formData.correo}
+          onChange={handleChange}
+        />
+        <InputPassword
+          name="clave"
+          placeholder="Tu contraseña"
+          value={formData.clave}
+          onChange={handleChange}
+        />
+        <Boton texto="Enviar" />
+      </Formulario>
+    </div>
+  );
+}
+
+export default App;

@@ -1,15 +1,15 @@
-const Input = ({ type, placeholder, value, onChange, required, minLength }) => {
+import React from 'react';
+
+function Input({ type = "text", placeholder, value, onChange }) {
   return (
     <input
       type={type}
+      className="form-control mb-2"
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      required={required}
-      minLength={minLength}
-      className="form-control mb-2"
     />
   );
-};
+}
 
 export default Input;
