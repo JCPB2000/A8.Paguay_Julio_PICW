@@ -36,10 +36,18 @@ function App() {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 text-center">
+      {/* Logo ESPE */}
+      <Imagen
+        src="https://www.espe.edu.ec/wp-content/uploads/2018/10/LOGO-ESPE_500.png"
+        alt="Logo ESPE"
+        width="300"
+        height="auto"
+      />
+
+      {/* Título principal */}
       <Titulo texto="Mi Proyecto React" nivel={1} />
       <Parrafo texto="Este proyecto muestra componentes personalizados en React." />
-      <Imagen src="https://via.placeholder.com/200" alt="Ejemplo" width="200" height="200" />
       <Enlace href="https://react.dev" texto="Documentación oficial de React" />
 
       <hr />
@@ -52,7 +60,7 @@ function App() {
         cabecera={['Nombre', 'Correo']}
         datos={[
           ['Julio', 'juliocesar@espe.com'],
-          ['Luis', ' @example.com']
+          ['Marco', 'marco@espe.com']
         ]}
       />
 
