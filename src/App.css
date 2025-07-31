@@ -1,18 +1,22 @@
+/* Centrado del contenido */
 .App {
   text-align: center;
 }
 
+/* Tamaño del logo (por defecto) */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Animación del logo (por defecto) */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Encabezado general (por defecto) */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,10 +28,12 @@
   color: white;
 }
 
+/* Color de enlaces */
 .App-link {
   color: #61dafb;
 }
 
+/* Giro del logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +41,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* ---- Estilos personalizados ---- */
+
+/* Título principal */
+.titulo-principal {
+  color: #006400;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contenedor con fondo y sombra */
+.fondo-contenedor {
+  background-color: #cceed3;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Logo con estilo */
+.logo-espe {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 100, 0, 0.5);
+  margin-bottom: 20px;
 }

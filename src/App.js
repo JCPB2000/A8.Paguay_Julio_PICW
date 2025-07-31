@@ -1,5 +1,8 @@
+// Se implementa una aplicación en React con componentes personalizados, formulario validado y estilos aplicados con Bootstrap y CSS.
+
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'; 
 
 import Titulo from './components/elementos_basicos/Titulo';
 import Parrafo from './components/elementos_basicos/Parrafo';
@@ -36,19 +39,23 @@ function App() {
   };
 
   return (
-    <div className="container mt-4 text-center">
-      {/* Logo ESPE */}
+    <div className="container fondo-contenedor mt-4 text-center">
+      {/* Logo ESPE con estilo */}
       <Imagen
         src="https://www.espe.edu.ec/wp-content/uploads/2018/10/LOGO-ESPE_500.png"
         alt="Logo ESPE"
         width="300"
         height="auto"
+        className="logo-espe"
       />
 
-      {/* Título principal */}
-      <Titulo texto="Mi Proyecto React" nivel={1} />
+      {/* Título principal con estilo */}
+      <Titulo texto="Mi Proyecto React" nivel={1} className="titulo-principal" />
       <Parrafo texto="Este proyecto muestra componentes personalizados en React." />
-      <Enlace href="https://react.dev" texto="Documentación oficial de React" />
+      <Enlace
+        href="https://www.espe.edu.ec/"
+        texto="Centro de Investigaciones de Aplicaciones Militares"
+      />
 
       <hr />
       <Titulo texto="Lista de tareas" nivel={2} />
@@ -63,7 +70,7 @@ function App() {
           ['Marco', 'marco@espe.com']
         ]}
       />
-  
+
       <hr />
       <Titulo texto="Formulario de contacto" nivel={2} />
       <Formulario onSubmit={handleSubmit}>
